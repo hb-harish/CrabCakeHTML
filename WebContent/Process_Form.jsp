@@ -11,9 +11,9 @@
 <center>
 <h1>Using GET Method to Read Form Data</h1>
 
-<ul>
+<ul> 
 <li>First Name:<%=request.getParameter("first_name")%></li>
-<li>Passwprd:<%=request.getParameter("password")%></li>
+<li>Password:<%=request.getParameter("password")%></li>
 </ul>
 </center>
 </body>
