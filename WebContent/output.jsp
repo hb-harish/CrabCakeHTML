@@ -9,6 +9,7 @@
 <body>
 <h2>Congrats you have been redirected</h2>
 <ul> 
+<li>First Name:<%=session.getAttribute("user")%></li>
 <li>First Name:<%=request.getParameter("first_name")%></li>
 <li>Password:<%=request.getParameter("password")%></li>
 </ul>

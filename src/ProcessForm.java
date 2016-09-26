@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ProcessForm
@@ -54,7 +55,12 @@ public class ProcessForm extends HttpServlet {
 	      u.setpassword(message2);
 	      String nextURL ="";
 	      if (u.isvaliduser())
-	      	  nextURL = "/output.jsp?first_name=" + message1 + "&password=" + message2;  
+      	  {
+	    	  HttpSession session = request.getSession();
+	    	  session.setAttribute("user", message1);
+//	    	  nextURL = "/output.jsp?first_name=" + message1 + "&password=" + message2;  
+	    	  nextURL = "/output.jsp";
+      	  }
 	      else
 	    	  nextURL = "/Login.html";
 	      
