@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import UserCheck.User;
+
 /**
  * Servlet implementation class ProcessForm
  */
@@ -57,7 +59,7 @@ public class ProcessForm extends HttpServlet {
 	      if (u.isvaliduser())
       	  {
 	    	  HttpSession session = request.getSession();
-	    	  session.setAttribute("user", message1);
+	    	  session.setAttribute("user", u);
 //	    	  nextURL = "/output.jsp?first_name=" + message1 + "&password=" + message2;  
 	    	  nextURL = "/output.jsp";
       	  }

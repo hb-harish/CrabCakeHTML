@@ -1,4 +1,4 @@
-
+package UserCheck;
 public class User {
 	
 	String name;	

@@ -8,9 +8,10 @@
 </head>
 <body>
 <h2>Congrats you have been redirected</h2>
+<% UserCheck.User u = (UserCheck.User) session.getAttribute("user");%>
 <ul> 
-<li>First Name:<%=session.getAttribute("user")%></li>
-<li>First Name:<%=request.getParameter("first_name")%></li>
+
+<li>First Name:<%=u.getName()%></li>
 <li>Password:<%=request.getParameter("password")%></li>
 </ul>
 </body>
