@@ -49,6 +49,17 @@ public class ProcessForm extends HttpServlet {
 	      out.println("<h1>" + message + "</h1>\n"); 
 	      out.println("<h2>" + message1 + "</h2>\n"); 
 	      out.println("<h2>" + message2 + "</h2>\n");
+	      User u = new User();
+	      u.setName(message1);
+	      u.setpassword(message2);
+	      String nextURL ="";
+	      if (u.isvaliduser())
+	      	  nextURL = "/output.jsp?first_name=" + message1 + "&password=" + message2;  
+	      else
+	    	  nextURL = "/Login.html";
+	      
+	    response.sendRedirect(request.getContextPath() + nextURL);
+
 	}
 
 }
